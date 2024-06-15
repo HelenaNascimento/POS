@@ -6,6 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
+
 URL = 'https://www.unichristus.edu.br/nossos-cursos/pos-graduacao/'
 
 reponse = requests.get(URL)
@@ -15,7 +16,7 @@ if reponse.status_code == 200:
 
     soup = BeautifulSoup(reponse.text, 'html.parser')
 
-    cursos_link = soup.find_all('a', href = True)
+    cursos_link = soup.find_all('h2', href = True)
 
     cursos = []
     
@@ -27,6 +28,8 @@ if reponse.status_code == 200:
     df_cursos = pd.DataFrame(cursos)
 
     print(df_cursos)
+
+    #df_cursos.to_excel('cursos.xlsx', index=False)
 
 else:
     print('Erro na requisição')
