@@ -34,6 +34,6 @@ for url in urls:
 
 df_cursos = pd.DataFrame(dados_cursos.values(), index=dados_cursos.keys())
 
-df_cursos.to_excel('Cursos.xlsx', index=False)
+#df_cursos.to_excel('Cursos.xlsx', index=False)
 
 print(df_cursos)
