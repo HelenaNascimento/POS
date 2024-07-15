@@ -18,7 +18,17 @@ CREATE TABLE FUNCIONARIO(
     SOBRENOME VARCHAR(50) NOT NULL,
     ANO_NASCIMENTO DATE
 
-):
+);
+
+/*
+CREATE TABLE FUNCIONARIO(
+    "ID_FUNC" INTEGER,
+    "NOME VARCHAR(50)" NOT NULL,
+    "SOBRENOME VARCHAR(50)" NOT NULL,
+    "ANO_NASCIMENTO" DATE,
+	PRIMARY KEY ("ID_FUNC" AUTOINCREMENT)
+);
+*/
 
 --TABELA LOJA:
 CREATE TABLE LOJA (
@@ -78,3 +88,19 @@ CREATE TABLE FATO(
     FOREIGN KEY (ID_FUNCIONARIO REFERENCES FUNCIONARIO(ID_FUNCIONARIO)),
     FOREIGN KEY (ID_TIPO_VENDAS REFERENCES TIPO_VENDA(ID_TIPO_VENDAS))
 );
+
+
+--INSERIR DADOS PRODUTO
+
+INSERT INTO Produto (nome_produto, tipo_produto) VALUES 
+('Smartphone X', 'Eletrônicos'),
+('Notebook Pro', 'Eletrônicos'),
+('Fones de Ouvido Plus', 'Acessórios'),
+('Smartwatch 2', 'Vestíveis'),
+('Tablet 8', 'Eletrônicos'),
+('Câmera Z', 'Fotografia'),
+('Caixa de Som Loud', 'Áudio'),
+('Drone Fly', 'Gadgets'),
+('Monitor 4K', 'Monitores'),
+('Teclado Swift', 'Periféricos');
+
